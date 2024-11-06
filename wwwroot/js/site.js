@@ -3,3 +3,17 @@
 
 // Write your JavaScript code.
 let table = new DataTable('#TablaIndice');
+
+//const today = new Date().toISOString().split('T')[0];
+//document.getElementById("fecha").setAttribute("min", today)
+
+const fechaInitial = document.getElementById("fechaInitial");
+const fechaFinal = document.getElementById("fechaFinal");
+
+const today = new Date().toISOString().split('T')[0];
+fechaInitial.setAttribute("min", today);
+
+fechaInitial.addEventListener("change", function () {
+    fechaFinal.value = '';
+    fechaFinal.setAttribute("min", fechaInitial.value);
+});
