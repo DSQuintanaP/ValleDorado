@@ -77,10 +77,12 @@ namespace ValleDorado.Controllers
                 foreach (var detalleSS in reserva.DetalleServicios)
                 {
                     detalleSS.IdDetalleServicio = reserva.IdReserva;
+                    _context.Add(detalleSS);
                 }
                 foreach (var detallePP in reserva.DetallePaquetes)
                 {
                     detallePP.IdDetallePaquete = reserva.IdReserva;
+                    _context.Add(detallePP);
                 }
                 await _context.SaveChangesAsync();
 
