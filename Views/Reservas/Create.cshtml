@@ -1,4 +1,5 @@
-﻿@model ValleDorado.Models.Reserva
+﻿@model ValleDorado.Models.Reserva 
+
 
 @{
     ViewData["Title"] = "Create";
@@ -40,9 +41,22 @@
             <div class="form-group">
                 <label asp-for="DocumentoCliente" class="control-label"></label>
                 <select asp-for="DocumentoCliente" class ="form-control" asp-items="ViewBag.DocumentoCliente"></select>
+            </div>          
+                
+            <div class="form-group">                    
+                <label asp-for="DetalleHabitaciones" class="control-label"></label>
+                <select asp-for="DetalleHabitaciones" class="form-control" asp-items="ViewBag.IdHabitacion"></select>                
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="DetalleServicios" class="control-label"></label>
+                <select asp-for="DetalleServicios" class="form-control" asp-items="ViewBag.IdServicio"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetallePaquetes" class="control-label"></label>
+                <select asp-for="DetallePaquetes" class="form-control" asp-items="ViewBag.IdPaquete"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
                 <a class="btn btn-outline-danger" asp-action="Index">Cancelar</a>
             </div>
         </form>
